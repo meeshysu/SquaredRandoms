@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SquaredRandoms
 {
@@ -6,7 +7,7 @@ namespace SquaredRandoms
     {
         static void Main(string[] args)
         {
-            var arrayOfNumbers = new object[20];
+            var randomNumberList = new List<int>();
             Random random = new Random();
 
             for (var i = 0; i < 20; i++)
