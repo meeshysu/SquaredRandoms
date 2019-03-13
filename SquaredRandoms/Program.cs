@@ -8,7 +8,7 @@ namespace SquaredRandoms
         static void Main(string[] args)
         {
             var numberOfRandomness = new RandomGenerator();
-            numberOfRandomness.randomNumbers();
+            numberOfRandomness.RandomNumbers();
 
             Console.ReadLine();
         }

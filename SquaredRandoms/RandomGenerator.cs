@@ -8,11 +8,13 @@ namespace SquaredRandoms
     {
         Random random = new Random();
         public List<int> randomNumberList = new List<int>();
+        public List<int> squaredNumbers = new List<int>();
 
-
-        public void randomNumbers()
+        public void RandomNumbers()
         {
-            var emptyString = "";
+            var numberString = "";
+            var randomNumberString = "";
+            var evenNumbersString = "";
             for (var i = 0; i < 20; i++)
             {
                 var randomVariable = (random.Next(1, 50));
@@ -20,15 +22,26 @@ namespace SquaredRandoms
             }
             foreach (var number in randomNumberList)
             {
-                Console.Write($"{number},");
+                numberString += number + ",";
             }
             foreach (var number in randomNumberList)
             {
-                var squaredNumber = number * number;
-                emptyString += squaredNumber.ToString();
-
-                Console.Write($"{squaredNumber}, ");
+                var squared = number * number;
+                squaredNumbers.Add(squared);
+                randomNumberString += squared + ",";
             }
+            foreach (var squaredNumber in squaredNumbers)
+            {
+                if (squaredNumber % 2 == 0)
+                {
+                    evenNumbersString += squaredNumber + ",";
+
+       
+                }
+            }
+            Console.WriteLine($"{numberString.TrimEnd(',')}");
+            Console.WriteLine($"{randomNumberString.TrimEnd(',')}");
+            Console.WriteLine($"{evenNumbersString.TrimEnd(',')}");
         }
     }
 }
